@@ -64,28 +64,7 @@ app.UseSwaggerUI(options =>
 
 BootstrapDatabase();
 
-// Add This
-app.UseHangfireDashboard("/jobs", options: new DashboardOptions
-{
-
-    DashboardTitle = "NOITechParkDoorSignage Jobs",
-    Authorization = new[] { new BasicAuthAuthorizationFilter(new BasicAuthAuthorizationFilterOptions
-        {
-            RequireSsl = false,
-            SslRedirect = false,
-            LoginCaseSensitive = true,
-            Users = new []
-            {
-                new BasicAuthAuthorizationUser
-                {
-                    Login = "admin",
-                    PasswordClear =  "noi_!admin_door"
-                }
-            }
-
-        })
-    }
-});
+ConfigureHangfireDashboard();
 
 // Start recurrent Hangfire Job to query Microsoft Graph API
 RecurringJob.AddOrUpdate<MicrosoftGraphJob>("MicrosoftGraphJob", x => x.SyncOffice365Data(), Cron.Minutely);
@@ -102,6 +81,42 @@ app.UseWhen(context => context.Request.Path.StartsWithSegments("/api/room"), app
 });
 
 app.Run();
+
+void ConfigureHangfireDashboard()
+{
+    using var scope = app.Services.CreateScope();
+    var services = scope.ServiceProvider;
+    try
+    {
+        var configuration = services.GetRequiredService<IConfiguration>();
+
+        app.UseHangfireDashboard("/jobs", options: new DashboardOptions
+        {
+            DashboardTitle = "NOITechParkDoorSignage Jobs",
+            Authorization = new[] { new BasicAuthAuthorizationFilter(new BasicAuthAuthorizationFilterOptions
+            {
+                RequireSsl = false,
+                SslRedirect = false,
+                LoginCaseSensitive = true,
+                Users = new []
+                {
+                    new BasicAuthAuthorizationUser
+                    {
+                        Login = "admin",
+                        PasswordClear =  configuration.GetValue<string>("Hangfire:ManagementPassword")
+                    }
+                }
+
+            })
+            }
+        });
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Cannot configure Hangfire Dashboard.");
+    }
+}
 
 void BootstrapDatabase()
 {
