@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: epaper-meetingroom-display-server
+Upstream-Contact: NOI Techpark <digital@noi.bz.it>
+Source: https://github.com/noi-techpark/epaper-meetingroom-display-server
+
+Files: .github/* infrastructure/* .gitignore .pre-commit-config.yaml LICENSE .dockerignore .env.example .gitmodules docker-compose.dcproj NOITechParkDoorSignage.sln
+Copyright: (c) NOI Techpark <digital@noi.bz.it>
+License: CC0-1.0

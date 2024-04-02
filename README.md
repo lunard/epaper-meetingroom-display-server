@@ -17,6 +17,7 @@ First of all create a .env file somewhere wit all needed env variables, which ar
 - AZURE_TENANT_ID=xxx
 - AZURE_CLIENT_ID=xxx
 - AZURE_CLIENT_SECRET=xxx
+- HANGFIRE_MANAGEMENT_PASSWORD = xxx
 
 Then start your container:\
 `docker run --env-file <path to the .env> -e TZ=Europe/Rome -p 5010:5010 -t noi-door-signage`
