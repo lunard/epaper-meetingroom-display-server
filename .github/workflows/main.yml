@@ -43,14 +43,15 @@ jobs:
         env:
           X_COMPOSE_PROJECT_NAME: ${{ env.PROJECT_NAME }}
           X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
-          X_DOCKER_TAG: ${{ env.DOCKER_TAG }}          
+          X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
           X_SERVER_PORT: 1040
-          X_ASPNETCORE_ENVIRONMENT: "Development"          
+          X_ASPNETCORE_ENVIRONMENT: "Development"
           X_LOG_PATH: ${{ secrets.LOG_PATH }}
           X_LOG_LEVEL: "Debug"
           X_AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           X_AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           X_AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          X_HANGFIRE_MANAGEMENT_PASSWORD: ${{ secrets.HANGFIRE_MANAGEMENT_PASSWORD }}
 
 
       - name: Build and push 
