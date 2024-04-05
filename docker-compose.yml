@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   epaper-meetingroom-display-server:
     image: ${DOCKER_IMAGE:-epaper-meetingroom-display-server}:${DOCKER_TAG:-latest}

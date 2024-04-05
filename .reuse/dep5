@@ -3,6 +3,6 @@ Upstream-Name: epaper-meetingroom-display-server
 Upstream-Contact: NOI Techpark <digital@noi.bz.it>
 Source: https://github.com/noi-techpark/epaper-meetingroom-display-server
 
-Files: .github/* infrastructure/* .gitignore .pre-commit-config.yaml LICENSE .dockerignore .env.example .gitmodules docker-compose.dcproj NOITechParkDoorSignage.sln */*.csproj */*.fsproj */appsettings.* */Dockerfile */Properties/*.json NOITechParkDoorSignage/NOITechParkDoorSignage.http
+Files: .github/* infrastructure/* .gitignore .pre-commit-config.yaml LICENSE .dockerignore .env.example .gitmodules docker-compose.dcproj NOITechParkDoorSignage.sln */*.csproj */*.fsproj */appsettings.* Dockerfile docker-compose.yml */Properties/*.json NOITechParkDoorSignage/NOITechParkDoorSignage.http
 Copyright: (c) NOI Techpark <digital@noi.bz.it>
 License: CC0-1.0
