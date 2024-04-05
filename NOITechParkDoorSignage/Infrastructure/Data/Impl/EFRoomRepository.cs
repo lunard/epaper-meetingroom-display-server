@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿// SPDX-FileCopyrightText: NOI Techpark <digital@noi.bz.it>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Microsoft.EntityFrameworkCore;
 using NOITechParkDoorSignage.Domain.Room;
 using NOITechParkDoorSignage.Infrastructure.Data.Interfaces;
 

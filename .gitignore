@@ -354,4 +354,5 @@ MigrationBackup/
 appsettings.Development*.json
 passwd.txt
 .env
+/src/IdentityServer_4/Properties/launchSettings.json
 /NOITechParkDoorSignage/Properties/launchSettings.json

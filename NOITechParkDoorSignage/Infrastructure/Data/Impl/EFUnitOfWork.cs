@@ -1,4 +1,8 @@
-﻿using NOITechParkDoorSignage.Infrastructure.Data.Interfaces;
+﻿// SPDX-FileCopyrightText: NOI Techpark <digital@noi.bz.it>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using NOITechParkDoorSignage.Infrastructure.Data.Interfaces;
 
 namespace NOITechParkDoorSignage.Infrastructure.Data.Impl
 {
