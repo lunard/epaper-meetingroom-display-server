@@ -1,4 +1,8 @@
-﻿using Microsoft.Graph.Education.Me.User;
+﻿// SPDX-FileCopyrightText: NOI Techpark <digital@noi.bz.it>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Microsoft.Graph.Education.Me.User;
 using NOITechParkDoorSignage.Application.Models.REST;
 using NOITechParkDoorSignage.Domain.Room;
 

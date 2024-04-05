@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// SPDX-FileCopyrightText: NOI Techpark <digital@noi.bz.it>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Microsoft.AspNetCore.Mvc;
 using NOITechParkDoorSignage.Application.ActionFilters;
 using NOITechParkDoorSignage.Application.Models.REST;
 using NOITechParkDoorSignage.Application.Services.Interfaces;

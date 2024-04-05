@@ -1,0 +1,18 @@
+services:
+  epaper-meetingroom-display-server:
+    image: ${DOCKER_IMAGE:-epaper-meetingroom-display-server}:${DOCKER_TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+      ASPNETCORE_URLS: http://+:80
+      ASPNETCORE_LOG_PATH: ${LOG_PATH}
+      ASPNETCORE_LOG_LEVEL: ${LOG_LEVEL}
+      ASPNETCORE_AZURE_TENANT_ID: ${AZURE_TENANT_ID}
+      ASPNETCORE_AZURE_CLIENT_ID: ${AZURE_CLIENT_ID}
+      ASPNETCORE_AZURE_CLIENT_SECRET: ${AZURE_CLIENT_SECRET}
+      HANGFIRE_MANAGEMENT_PASSWORD: ${HANGFIRE_MANAGEMENT_PASSWORD}
+    restart: unless-stopped
+    ports:
+      - "5010:80"
