@@ -10,6 +10,9 @@ namespace NOITechParkDoorSignage.Application.ExtensionMethods
 {
     public static class CalendarExtensionMethod
     {
+        private static TimeZoneInfo italianTimezone => TimeZoneInfo.FindSystemTimeZoneById("W. Europe Standard Time");
+        private static DateTime getItalianTimezoneDate(DateTime utcDate) => TimeZoneInfo.ConvertTimeFromUtc(utcDate, italianTimezone);
+
         public static int TotalMinutesFromNow(this DateTime dateTime)
         {
             var diff = (dateTime - DateTime.Now.ToUniversalTime()).TotalMinutes;
@@ -31,8 +34,8 @@ namespace NOITechParkDoorSignage.Application.ExtensionMethods
             {
                 Title = titleTokens.Length > 3 ? titleTokens[2] : calendarEvent.Title,
                 Organizer = calendarEvent.Organizer,
-                StartAt = calendarEvent.StartDate.ToLocalTime().ToString("HH:mm"),
-                EndAt = calendarEvent.EndDate.ToLocalTime().ToString("HH:mm"),
+                StartAt = getItalianTimezoneDate(calendarEvent.StartDate).ToString("HH:mm"),
+                EndAt = getItalianTimezoneDate(calendarEvent.EndDate).ToString("HH:mm"),
                 BookedByLabel = calendarEvent.Organizer == calendarEvent.Room.Email
             };
 
