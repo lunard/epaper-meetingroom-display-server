@@ -10,7 +10,7 @@ namespace NOITechParkDoorSignage.Application.ExtensionMethods
 {
     public static class CalendarExtensionMethod
     {
-        private static TimeZoneInfo italianTimezone => TimeZoneInfo.FindSystemTimeZoneById("W. Europe Standard Time");
+        private static TimeZoneInfo italianTimezone => TimeZoneInfo.FindSystemTimeZoneById("Europe/Rome");
         private static DateTime getItalianTimezoneDate(DateTime utcDate) => TimeZoneInfo.ConvertTimeFromUtc(utcDate, italianTimezone);
 
         public static int TotalMinutesFromNow(this DateTime dateTime)
